@@ -14,6 +14,8 @@ print(sys.version)
 
 app = dash.Dash(__name__)
 
+server = app.server
+
 
 
 # Datasets for The Supermarket Visualization
