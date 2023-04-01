@@ -40,47 +40,47 @@ Customer_option = XYZ_Company_Datasets['Customer type'].unique()
 
 
 
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-import seaborn as sns; sns.set()
+# import matplotlib.pyplot as plt
+# from sklearn.cluster import KMeans
+# import seaborn as sns; sns.set()
 
 
-# Datasets for The Hospital Cluster Visualization
-datasets = pd.read_excel("lagosHosptals.xlsx")
+# # Datasets for The Hospital Cluster Visualization
+# datasets = pd.read_excel("lagosHosptals.xlsx")
 
-datasets_lat = datasets[["lat"]]
-datasets_long = datasets[["long"]]
+# datasets_lat = datasets[["lat"]]
+# datasets_long = datasets[["long"]]
 
-geo_datas = datasets[["lat"]]
+# geo_datas = datasets[["lat"]]
 
-geo_datas["lon"] = datasets_long
+# geo_datas["lon"] = datasets_long
 
-geo_datas["lat"]
-geo_datas["lon"]
+# geo_datas["lat"]
+# geo_datas["lon"]
 
-K_clusters = range(1,10)
-kmeans = [KMeans(n_clusters=i) for i in K_clusters]
-Y_axis = geo_datas[['lon']]
-X_axis = geo_datas[['lat']]
-score = [kmeans[i].fit(Y_axis).score(Y_axis) for i in range(len(kmeans))]
-# Visualize
-line_fig = px.line(x = K_clusters, y = score, title = 'Elbow Curve')
-
-
-KMNs = KMeans(n_clusters=6)
-
-KMNs.fit(geo_datas)
-
-Labels = KMNs.predict(geo_datas)
-
-Centroid = KMNs.cluster_centers_
-a = Centroid[:,0]
-b = Centroid[:,1]
+# K_clusters = range(1,10)
+# kmeans = [KMeans(n_clusters=i) for i in K_clusters]
+# Y_axis = geo_datas[['lon']]
+# X_axis = geo_datas[['lat']]
+# score = [kmeans[i].fit(Y_axis).score(Y_axis) for i in range(len(kmeans))]
+# # Visualize
+# line_fig = px.line(x = K_clusters, y = score, title = 'Elbow Curve')
 
 
+# KMNs = KMeans(n_clusters=6)
 
-fig = px.scatter(geo_datas, x = geo_datas["lat"], y = geo_datas["lon"],
-              color = Labels, opacity = 0.8, size = geo_datas["lat"], size_max=30, title = 'LAGOS HOSPITAL CLUSTER')
+# KMNs.fit(geo_datas)
+
+# Labels = KMNs.predict(geo_datas)
+
+# Centroid = KMNs.cluster_centers_
+# a = Centroid[:,0]
+# b = Centroid[:,1]
+
+
+
+# fig = px.scatter(geo_datas, x = geo_datas["lat"], y = geo_datas["lon"],
+#               color = Labels, opacity = 0.8, size = geo_datas["lat"], size_max=30, title = 'LAGOS HOSPITAL CLUSTER')
 
 # Application layout
 app.layout = html.Div(children=[ 
@@ -166,15 +166,15 @@ app.layout = html.Div(children=[
                                                 "height":"70vh"}),),],
                         style={"display": "flex","background-color": "#0e1012","padding-bottom": "60px","justify-content": "space-around"}),
                   
-        html.Div(children=[
+#         html.Div(children=[
                         
-                        html.Div(dcc.Graph(id='plot4', figure = line_fig,
-                                                style={"background-color": "#161A1D","text-align": "center",
-                                                "height":"70vh"}),),
-                        html.Div(dcc.Graph(id='plot5', figure = fig,
-                                                style={"background-color": "#161A1D","text-align": "center",
-                                                "height":"70vh"}),),],
-                        style={"display": "flex","background-color": "#0e1012","padding-bottom": "60px","justify-content": "space-around"}), 
+#                         html.Div(dcc.Graph(id='plot4', figure = line_fig,
+#                                                 style={"background-color": "#161A1D","text-align": "center",
+#                                                 "height":"70vh"}),),
+#                         html.Div(dcc.Graph(id='plot5', figure = fig,
+#                                                 style={"background-color": "#161A1D","text-align": "center",
+#                                                 "height":"70vh"}),),],
+#                         style={"display": "flex","background-color": "#0e1012","padding-bottom": "60px","justify-content": "space-around"}), 
                                    
                      # Graph layout
                                
