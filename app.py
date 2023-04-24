@@ -138,6 +138,7 @@ def pie_fig():
 # Application layout
 # Build App
 
+app = Dash(external_stylesheets=[dbc.themes.SLATE])
 app.layout = html.Div([
     dbc.Card(
         dbc.CardBody([
