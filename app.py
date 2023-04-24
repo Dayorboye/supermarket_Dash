@@ -12,7 +12,7 @@ import sys
 print(sys.version)
 # Dash Application
 
-app = dash.Dash(__name__)
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 server = app.server
 
@@ -137,7 +137,7 @@ def pie_fig():
 
 # Application layout
 # Build App
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
 app.layout = html.Div([
     dbc.Card(
         dbc.CardBody([
