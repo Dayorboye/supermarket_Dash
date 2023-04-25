@@ -12,7 +12,7 @@ import sys
 print(sys.version)
 # Dash Application
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__,  external_stylesheets=[dbc.themes.VAPOR])
 
 server = app.server
 
@@ -51,7 +51,7 @@ def drawText(name,value):
                                                                 style={"text-align": "center", "font-size":"20px","font-family": "Abel","font-weight":"600","font-size": "18px",'color':'#7570b3'}),)),                       
                                         html.Div(
                                         html.Div(html.H1(value, 
-                                                                style={"text-align": "center", "font-size":"20px","font-family": "Abel","font-weight":"600","font-size": "18px","color":"white"}),)),
+                                                                style={"text-align": "center", "font-size":"20px","font-family": "Abel","font-weight":"600","font-size": "18px",'color':'#7570b3'}),)),
                                                                 ],), 
             ])
         ),
