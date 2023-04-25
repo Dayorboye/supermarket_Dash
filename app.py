@@ -181,10 +181,10 @@ app.layout = html.Div([
             dbc.Row([
                 dbc.Col([
                    tree_fig() 
-                ], width=9),
+                ], width=7),
                 dbc.Col([
                     pie_fig()
-                ], width=3),
+                ], width=5),
             ], align='center'),      
         ]), color = 'dark'
     )
