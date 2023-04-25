@@ -12,7 +12,7 @@ import sys
 print(sys.version)
 # Dash Application
 
-app = dash.Dash(__name__,  external_stylesheets=[dbc.themes.VAPOR])
+app = dash.Dash(__name__,  external_stylesheets=[dbc.themes.SLATE])
 
 server = app.server
 
