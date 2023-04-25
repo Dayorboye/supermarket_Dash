@@ -80,7 +80,8 @@ def dropdow():
                                                         'label': i,
                                                         'value': i
                                                         } for i in Customer_option ],
-                                                 placeholder="Select Customer", searchable = True , value = 'All Customers',)
+                                                 placeholder="Select Customer", searchable = True , value = 'All Customers',
+                                                 style={'font-size': '20px', 'text-align-last' : 'center','color':'#7570b3'})
 
 
           
