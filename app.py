@@ -81,7 +81,7 @@ def dropdow():
                                                         'value': i
                                                         } for i in Customer_option ],
                                                  placeholder="Select Customer", searchable = True , value = 'All Customers',
-                                                 style={'font-size': '20px', 'text-align-last' : 'center','color':'#7570b3'})
+                                                 style={'font-size': '16px', 'text-align-last' : 'center','color':'#7570b3'})
 
 
           
@@ -164,7 +164,7 @@ app.layout = html.Div([
 
                 dbc.Col([
                     dropdow()
-                ], width=6),
+                ], width=4),
             ], align='center'), 
             html.Br(),
             dbc.Row([
